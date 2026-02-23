@@ -5,7 +5,6 @@ export default function Home() {
       {/* --- โซนที่ 1: Hero Section --- */}
       <div className="text-center space-y-6 max-w-3xl mt-16 flex flex-col items-center">
         
-        {/* รูปโปรไฟล์วงกลมสุดเท่ */}
         <div className="w-40 h-40 md:w-52 md:h-52 rounded-full overflow-hidden border-4 border-gray-800 hover:border-blue-500 transition-all duration-500 mb-2 shadow-xl hover:shadow-blue-500/20">
           <img 
             src="/getstudentimageftp.jpg" 
@@ -39,9 +38,10 @@ export default function Home() {
       <div id="projects" className="mt-32 w-full max-w-5xl pb-20 scroll-mt-12">
         <h2 className="text-3xl font-bold border-b border-gray-800 pb-4 mb-8">Featured Projects</h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* เปลี่ยนเป็น Grid 2 ช่อง เพื่อให้เรียง 4 การ์ดได้สวยงามพอดี */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           
-          {/* 🌟 ผลงานใหม่ล่าสุด: Logistics API (ใส่เป็นใบแรกให้เตะตา HR!) */}
+          {/* 🌟 ผลงานที่ 1: Logistics API */}
           <div className="bg-gray-900 border border-gray-800 p-6 rounded-xl hover:border-orange-500 transition-all duration-300 cursor-pointer hover:-translate-y-2 relative overflow-hidden">
             <div className="absolute top-0 right-0 bg-orange-500 text-white text-[10px] font-bold px-2 py-1 rounded-bl-lg">NEW</div>
             <h3 className="text-xl font-bold text-orange-400 mb-2">Logistics Microservices</h3>
@@ -77,6 +77,19 @@ export default function Home() {
             <div className="flex flex-wrap gap-2">
               <span className="px-3 py-1 bg-gray-800 text-xs rounded-full font-medium">Next.js</span>
               <span className="px-3 py-1 bg-gray-800 text-xs rounded-full font-medium">Tailwind</span>
+            </div>
+          </div>
+
+          {/* 🎮 ผลงานที่ 4: Game Dev & Creative Tech (เอากลับมาแล้ว!) */}
+          <div className="bg-gray-900 border border-gray-800 p-6 rounded-xl hover:border-purple-500 transition-all duration-300 cursor-pointer hover:-translate-y-2">
+            <h3 className="text-xl font-bold text-purple-400 mb-2">Game Dev & Creative Tech</h3>
+            <p className="text-gray-400 text-sm mb-4 leading-relaxed">
+              Developing games using Unity and C#. Currently studying and actively practicing 3D modeling with Blender, alongside 2D art creation.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              <span className="px-3 py-1 bg-gray-800 text-xs rounded-full font-medium">Unity</span>
+              <span className="px-3 py-1 bg-gray-800 text-xs rounded-full font-medium">C#</span>
+              <span className="px-3 py-1 border border-purple-500/50 text-purple-400 text-xs rounded-full font-medium">Learning Blender</span>
             </div>
           </div>
 
