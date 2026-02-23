@@ -102,12 +102,12 @@ export default function Home() {
             <h2 className="text-3xl font-bold border-b border-gray-800 pb-4 mb-8 text-blue-400">Experience & Education</h2>
             <div className="space-y-8">
               
-              {/* เพิ่มประสบการณ์ฝึกงานที่ Cyberpay */}
+              {/* อัปเดตประสบการณ์ฝึกงาน */}
               <div className="relative pl-6 border-l-2 border-purple-500">
                 <div className="absolute w-4 h-4 bg-purple-500 rounded-full -left-[9px] top-1 shadow-[0_0_10px_rgba(168,85,247,0.5)]"></div>
-                <h3 className="text-xl font-bold">IT Intern</h3>
+                <h3 className="text-xl font-bold">IT Intern <span className="text-purple-300 text-sm font-normal ml-2">(4 Months)</span></h3>
                 <p className="text-purple-400 text-sm font-semibold mb-2">Cyberpay Technology Co., Ltd.</p>
-                <p className="text-gray-400 text-sm">Gained practical experience in technology, assisting in real-world IT operations, systems, and problem-solving.</p>
+                <p className="text-gray-400 text-sm leading-relaxed">Completed a 4-month internship focused on full-cycle web development. Responsibilities included building websites and conducting rigorous system testing (QA) to ensure stability, performance, and bug-free user experiences.</p>
               </div>
 
               <div className="relative pl-6 border-l-2 border-blue-500">
@@ -131,7 +131,6 @@ export default function Home() {
           <div>
             <h2 className="text-3xl font-bold border-b border-gray-800 pb-4 mb-8 text-emerald-400">Profile & Awards</h2>
             
-            {/* กล่อง Soft Skills ที่ถอดมาจากตัวคุณจริงๆ */}
             <div className="bg-gray-900 border border-gray-800 p-6 rounded-xl mb-6 hover:border-blue-500/50 transition-all duration-300">
               <h3 className="text-lg font-bold text-white mb-4">Core Soft Skills</h3>
               <div className="space-y-4">
@@ -159,7 +158,6 @@ export default function Home() {
               </div>
             </div>
 
-            {/* กล่องรางวัล */}
             <div className="bg-gray-900 border border-emerald-500/30 p-6 rounded-xl shadow-[0_0_15px_rgba(16,185,129,0.1)]">
               <h3 className="text-lg font-bold text-emerald-400 mb-2">🏆 Outstanding Academic Award</h3>
               <p className="text-gray-400 text-sm leading-relaxed">
