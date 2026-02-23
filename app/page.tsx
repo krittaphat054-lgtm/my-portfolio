@@ -41,19 +41,21 @@ export default function Home() {
         {/* เปลี่ยนเป็น Grid 2 ช่อง เพื่อให้เรียง 4 การ์ดได้สวยงามพอดี */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           
-          {/* 🌟 ผลงานที่ 1: Logistics API */}
-          <div className="bg-gray-900 border border-gray-800 p-6 rounded-xl hover:border-orange-500 transition-all duration-300 cursor-pointer hover:-translate-y-2 relative overflow-hidden">
-            <div className="absolute top-0 right-0 bg-orange-500 text-white text-[10px] font-bold px-2 py-1 rounded-bl-lg">NEW</div>
-            <h3 className="text-xl font-bold text-orange-400 mb-2">Logistics Microservices</h3>
-            <p className="text-gray-400 text-sm mb-4 leading-relaxed">
-              High-performance order processing API using Message Queue to handle massive concurrent requests.
-            </p>
-            <div className="flex flex-wrap gap-2">
-              <span className="px-3 py-1 bg-gray-800 text-xs rounded-full font-medium">RabbitMQ</span>
-              <span className="px-3 py-1 bg-gray-800 text-xs rounded-full font-medium">MongoDB</span>
-              <span className="px-3 py-1 bg-gray-800 text-xs rounded-full font-medium">Docker</span>
+          {/* 🌟 ผลงานที่ 1: Logistics API (อัปเกรดให้กดลิงก์ได้) */}
+          <a href="https://github.com/krittaphat054-lgtm/logistics-api" target="_blank" rel="noopener noreferrer" className="block">
+            <div className="h-full bg-gray-900 border border-gray-800 p-6 rounded-xl hover:border-orange-500 transition-all duration-300 cursor-pointer hover:-translate-y-2 relative overflow-hidden">
+              <div className="absolute top-0 right-0 bg-orange-500 text-white text-[10px] font-bold px-2 py-1 rounded-bl-lg">NEW</div>
+              <h3 className="text-xl font-bold text-orange-400 mb-2">Logistics Microservices</h3>
+              <p className="text-gray-400 text-sm mb-4 leading-relaxed">
+                High-performance order processing API using Message Queue to handle massive concurrent requests.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <span className="px-3 py-1 bg-gray-800 text-xs rounded-full font-medium">RabbitMQ</span>
+                <span className="px-3 py-1 bg-gray-800 text-xs rounded-full font-medium">MongoDB</span>
+                <span className="px-3 py-1 bg-gray-800 text-xs rounded-full font-medium">Docker</span>
+              </div>
             </div>
-          </div>
+          </a>
 
           {/* ผลงานที่ 2: DevOps & K8s */}
           <div className="bg-gray-900 border border-gray-800 p-6 rounded-xl hover:border-blue-500 transition-all duration-300 cursor-pointer hover:-translate-y-2">
