@@ -7,7 +7,7 @@ export default function Home() {
         
         <div className="w-40 h-40 md:w-52 md:h-52 rounded-full overflow-hidden border-4 border-gray-800 hover:border-blue-500 transition-all duration-500 mb-2 shadow-xl hover:shadow-blue-500/20">
           <img 
-            src="/profile.jpg" 
+            src="/getstudentimageftp.jpg" 
             alt="Krittaphat Profile" 
             className="w-full h-full object-cover"
           />
@@ -40,7 +40,6 @@ export default function Home() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           
-          {/* ผลงานที่ 1: Logistics API */}
           <a href="https://github.com/krittaphat054-lgtm/logistics-api" target="_blank" rel="noopener noreferrer" className="block">
             <div className="h-full bg-gray-900 border border-gray-800 p-6 rounded-xl hover:border-orange-500 transition-all duration-300 cursor-pointer hover:-translate-y-2 relative overflow-hidden">
               <div className="absolute top-0 right-0 bg-orange-500 text-white text-[10px] font-bold px-2 py-1 rounded-bl-lg">NEW</div>
@@ -56,7 +55,6 @@ export default function Home() {
             </div>
           </a>
 
-          {/* ผลงานที่ 2: DevOps & K8s */}
           <div className="bg-gray-900 border border-gray-800 p-6 rounded-xl hover:border-blue-500 transition-all duration-300 cursor-pointer hover:-translate-y-2">
             <h3 className="text-xl font-bold text-blue-400 mb-2">CI/CD & Kubernetes</h3>
             <p className="text-gray-400 text-sm mb-4 leading-relaxed">
@@ -69,7 +67,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* ผลงานที่ 3: Temple Website */}
           <div className="bg-gray-900 border border-gray-800 p-6 rounded-xl hover:border-emerald-500 transition-all duration-300 cursor-pointer hover:-translate-y-2">
             <h3 className="text-xl font-bold text-emerald-400 mb-2">Temple Website</h3>
             <p className="text-gray-400 text-sm mb-4 leading-relaxed">
@@ -81,7 +78,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* ผลงานที่ 4: Game Dev (อัปเดตชื่อเกม ผาปันสุข) */}
           <div className="bg-gray-900 border border-gray-800 p-6 rounded-xl hover:border-purple-500 transition-all duration-300 cursor-pointer hover:-translate-y-2">
             <h3 className="text-xl font-bold text-purple-400 mb-2">Game Dev: Pha Pan Suk</h3>
             <p className="text-gray-400 text-sm mb-4 leading-relaxed">
@@ -97,15 +93,23 @@ export default function Home() {
         </div>
       </div>
 
-      {/* --- โซนที่ 3: Education & Profile (เพิ่มเข้ามาใหม่!) --- */}
+      {/* --- โซนที่ 3: Experience, Education & Profile --- */}
       <div className="mt-20 w-full max-w-5xl pb-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           
-          {/* ฝั่งซ้าย: Education Timeline */}
+          {/* ฝั่งซ้าย: Experience & Education Timeline */}
           <div>
-            <h2 className="text-3xl font-bold border-b border-gray-800 pb-4 mb-8 text-blue-400">Education</h2>
+            <h2 className="text-3xl font-bold border-b border-gray-800 pb-4 mb-8 text-blue-400">Experience & Education</h2>
             <div className="space-y-8">
               
+              {/* เพิ่มประสบการณ์ฝึกงานที่ Cyberpay */}
+              <div className="relative pl-6 border-l-2 border-purple-500">
+                <div className="absolute w-4 h-4 bg-purple-500 rounded-full -left-[9px] top-1 shadow-[0_0_10px_rgba(168,85,247,0.5)]"></div>
+                <h3 className="text-xl font-bold">IT Intern</h3>
+                <p className="text-purple-400 text-sm font-semibold mb-2">Cyberpay Technology Co., Ltd.</p>
+                <p className="text-gray-400 text-sm">Gained practical experience in technology, assisting in real-world IT operations, systems, and problem-solving.</p>
+              </div>
+
               <div className="relative pl-6 border-l-2 border-blue-500">
                 <div className="absolute w-4 h-4 bg-blue-500 rounded-full -left-[9px] top-1 shadow-[0_0_10px_rgba(59,130,246,0.5)]"></div>
                 <h3 className="text-xl font-bold">Chiang Mai Rajabhat University</h3>
@@ -123,26 +127,44 @@ export default function Home() {
             </div>
           </div>
 
-          {/* ฝั่งขวา: Awards & About Me */}
+          {/* ฝั่งขวา: Soft Skills & Awards */}
           <div>
-            <h2 className="text-3xl font-bold border-b border-gray-800 pb-4 mb-8 text-emerald-400">Awards & Profile</h2>
+            <h2 className="text-3xl font-bold border-b border-gray-800 pb-4 mb-8 text-emerald-400">Profile & Awards</h2>
             
+            {/* กล่อง Soft Skills ที่ถอดมาจากตัวคุณจริงๆ */}
+            <div className="bg-gray-900 border border-gray-800 p-6 rounded-xl mb-6 hover:border-blue-500/50 transition-all duration-300">
+              <h3 className="text-lg font-bold text-white mb-4">Core Soft Skills</h3>
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <span className="text-blue-400 mt-1">💡</span>
+                  <div>
+                    <h4 className="font-semibold text-gray-200">Problem-Solving & Debugging</h4>
+                    <p className="text-gray-400 text-sm leading-relaxed">Able to tackle unexpected errors calmly and find effective solutions (e.g., CI/CD pipelines, Docker, Server configurations).</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-blue-400 mt-1">🚀</span>
+                  <div>
+                    <h4 className="font-semibold text-gray-200">Fast Learner & Adaptable</h4>
+                    <p className="text-gray-400 text-sm leading-relaxed">Quick to pick up new frameworks and technologies (Next.js, RabbitMQ, Bun) to meet enterprise demands.</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-blue-400 mt-1">💪</span>
+                  <div>
+                    <h4 className="font-semibold text-gray-200">Resilience & Growth Mindset</h4>
+                    <p className="text-gray-400 text-sm leading-relaxed">Highly driven, not afraid to fail, and always eager to tailor my skills to match industry requirements.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* กล่องรางวัล */}
-            <div className="bg-gray-900 border border-emerald-500/30 p-6 rounded-xl mb-6 shadow-[0_0_15px_rgba(16,185,129,0.1)]">
+            <div className="bg-gray-900 border border-emerald-500/30 p-6 rounded-xl shadow-[0_0_15px_rgba(16,185,129,0.1)]">
               <h3 className="text-lg font-bold text-emerald-400 mb-2">🏆 Outstanding Academic Award</h3>
               <p className="text-gray-400 text-sm leading-relaxed">
                 Awarded for Excellence in Computer Science at the National Science Week (2025).
               </p>
-            </div>
-
-            {/* กล่อง About Me */}
-            <div className="bg-gray-900 border border-gray-800 p-6 rounded-xl">
-              <h3 className="text-lg font-bold text-white mb-4">About Me</h3>
-              <ul className="text-gray-400 text-sm space-y-3">
-                <li><strong className="text-gray-200">Nickname:</strong> Job (จ๊อบ)</li>
-                <li><strong className="text-gray-200">Languages:</strong> C#, C++, HTML/CSS, TypeScript</li>
-                <li><strong className="text-gray-200">Soft Skills:</strong> Fast learner, highly adaptable, and passionate about tech innovations and designs.</li>
-              </ul>
             </div>
 
           </div>
