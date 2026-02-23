@@ -7,7 +7,7 @@ export default function Home() {
         
         <div className="w-40 h-40 md:w-52 md:h-52 rounded-full overflow-hidden border-4 border-gray-800 hover:border-blue-500 transition-all duration-500 mb-2 shadow-xl hover:shadow-blue-500/20">
           <img 
-            src="/getstudentimageftp.jpg" 
+            src="/profile.jpg" 
             alt="Krittaphat Profile" 
             className="w-full h-full object-cover"
           />
@@ -21,7 +21,7 @@ export default function Home() {
         </h1>
         <p className="text-gray-400 text-lg md:text-xl leading-relaxed">
           I am passionate about Web Development, DevOps, and Creative Tech. 
-          I love building modern applications and scalable infrastructure.
+          Always eager to learn new technologies and improve my skills.
         </p>
         
         <div className="flex justify-center gap-4 pt-6">
@@ -35,13 +35,12 @@ export default function Home() {
       </div>
 
       {/* --- โซนที่ 2: Projects Showcase --- */}
-      <div id="projects" className="mt-32 w-full max-w-5xl pb-20 scroll-mt-12">
+      <div id="projects" className="mt-32 w-full max-w-5xl scroll-mt-12">
         <h2 className="text-3xl font-bold border-b border-gray-800 pb-4 mb-8">Featured Projects</h2>
         
-        {/* เปลี่ยนเป็น Grid 2 ช่อง เพื่อให้เรียง 4 การ์ดได้สวยงามพอดี */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           
-          {/* 🌟 ผลงานที่ 1: Logistics API (อัปเกรดให้กดลิงก์ได้) */}
+          {/* ผลงานที่ 1: Logistics API */}
           <a href="https://github.com/krittaphat054-lgtm/logistics-api" target="_blank" rel="noopener noreferrer" className="block">
             <div className="h-full bg-gray-900 border border-gray-800 p-6 rounded-xl hover:border-orange-500 transition-all duration-300 cursor-pointer hover:-translate-y-2 relative overflow-hidden">
               <div className="absolute top-0 right-0 bg-orange-500 text-white text-[10px] font-bold px-2 py-1 rounded-bl-lg">NEW</div>
@@ -82,19 +81,71 @@ export default function Home() {
             </div>
           </div>
 
-          {/* 🎮 ผลงานที่ 4: Game Dev & Creative Tech (เอากลับมาแล้ว!) */}
+          {/* ผลงานที่ 4: Game Dev (อัปเดตชื่อเกม ผาปันสุข) */}
           <div className="bg-gray-900 border border-gray-800 p-6 rounded-xl hover:border-purple-500 transition-all duration-300 cursor-pointer hover:-translate-y-2">
-            <h3 className="text-xl font-bold text-purple-400 mb-2">Game Dev & Creative Tech</h3>
+            <h3 className="text-xl font-bold text-purple-400 mb-2">Game Dev: Pha Pan Suk</h3>
             <p className="text-gray-400 text-sm mb-4 leading-relaxed">
-              Developing games using Unity and C#. Currently studying and actively practicing 3D modeling with Blender, alongside 2D art creation.
+              Created a 2D game named "Pha Pan Suk" using Unity. Currently studying and actively practicing 3D modeling with Blender.
             </p>
             <div className="flex flex-wrap gap-2">
               <span className="px-3 py-1 bg-gray-800 text-xs rounded-full font-medium">Unity</span>
-              <span className="px-3 py-1 bg-gray-800 text-xs rounded-full font-medium">C#</span>
-              <span className="px-3 py-1 border border-purple-500/50 text-purple-400 text-xs rounded-full font-medium">Learning Blender</span>
+              <span className="px-3 py-1 bg-gray-800 text-xs rounded-full font-medium">C# / C++</span>
+              <span className="px-3 py-1 border border-purple-500/50 text-purple-400 text-xs rounded-full font-medium">Blender</span>
             </div>
           </div>
 
+        </div>
+      </div>
+
+      {/* --- โซนที่ 3: Education & Profile (เพิ่มเข้ามาใหม่!) --- */}
+      <div className="mt-20 w-full max-w-5xl pb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          
+          {/* ฝั่งซ้าย: Education Timeline */}
+          <div>
+            <h2 className="text-3xl font-bold border-b border-gray-800 pb-4 mb-8 text-blue-400">Education</h2>
+            <div className="space-y-8">
+              
+              <div className="relative pl-6 border-l-2 border-blue-500">
+                <div className="absolute w-4 h-4 bg-blue-500 rounded-full -left-[9px] top-1 shadow-[0_0_10px_rgba(59,130,246,0.5)]"></div>
+                <h3 className="text-xl font-bold">Chiang Mai Rajabhat University</h3>
+                <p className="text-blue-400 text-sm font-semibold mb-2">2022 - 2025</p>
+                <p className="text-gray-400 text-sm">Bachelor of Science in Computer Science</p>
+              </div>
+
+              <div className="relative pl-6 border-l-2 border-gray-800">
+                <div className="absolute w-4 h-4 bg-gray-600 rounded-full -left-[9px] top-1"></div>
+                <h3 className="text-xl font-bold">Wangchinwittaya School</h3>
+                <p className="text-gray-500 text-sm font-semibold mb-2">2013 - 2022</p>
+                <p className="text-gray-400 text-sm">High School - Science and Mathematics Program</p>
+              </div>
+
+            </div>
+          </div>
+
+          {/* ฝั่งขวา: Awards & About Me */}
+          <div>
+            <h2 className="text-3xl font-bold border-b border-gray-800 pb-4 mb-8 text-emerald-400">Awards & Profile</h2>
+            
+            {/* กล่องรางวัล */}
+            <div className="bg-gray-900 border border-emerald-500/30 p-6 rounded-xl mb-6 shadow-[0_0_15px_rgba(16,185,129,0.1)]">
+              <h3 className="text-lg font-bold text-emerald-400 mb-2">🏆 Outstanding Academic Award</h3>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                Awarded for Excellence in Computer Science at the National Science Week (2025).
+              </p>
+            </div>
+
+            {/* กล่อง About Me */}
+            <div className="bg-gray-900 border border-gray-800 p-6 rounded-xl">
+              <h3 className="text-lg font-bold text-white mb-4">About Me</h3>
+              <ul className="text-gray-400 text-sm space-y-3">
+                <li><strong className="text-gray-200">Nickname:</strong> Job (จ๊อบ)</li>
+                <li><strong className="text-gray-200">Languages:</strong> C#, C++, HTML/CSS, TypeScript</li>
+                <li><strong className="text-gray-200">Soft Skills:</strong> Fast learner, highly adaptable, and passionate about tech innovations and designs.</li>
+              </ul>
+            </div>
+
+          </div>
         </div>
       </div>
 
