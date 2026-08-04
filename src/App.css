@@ -1,0 +1,194 @@
+/* App.css - กำหนดโทนสีและสไตล์ของหน้าเว็บ */
+:root {
+  --bg-color: #121212;
+  --surface-color: #1e1e24;
+  --text-main: #ffffff;
+  --text-muted: #9e9ea7;
+  --accent-color: #646cff;
+  --accent-hover: #535bf2;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.portfolio-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+/* ตกแต่งรูปโปรไฟล์ให้เป็นวงกลมและมีขอบเรืองแสง */
+.profile-img {
+  border-radius: 50%;
+  border: 4px solid var(--surface-color);
+  box-shadow: 0 0 20px rgba(100, 108, 255, 0.4);
+  object-fit: cover;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+  transform: scale(1.05);
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-top: 0;
+  line-height: 1.4; /* เพิ่มความสูงบรรทัด */
+  padding-bottom: 10px; /* เพิ่มระยะขอบล่างกันตัวอักษรจม */
+  background: -webkit-linear-gradient(45deg, #646cff, #a164ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h2 {
+  color: var(--text-main);
+  margin: 40px 0 20px 0;
+  font-size: 1.5em;
+}
+
+/* จัดการ์ดโปรเจคเป็น Grid */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 50px 0;
+}
+
+.project-card {
+  background-color: var(--surface-color);
+  padding: 25px;
+  border-radius: 12px;
+  text-align: left;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #2a2a35;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-color);
+}
+
+.project-card h4 {
+  margin: 0 0 10px 0;
+  font-size: 1.2em;
+  color: var(--text-main);
+}
+
+.project-card p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.95em;
+}
+
+/* ตกแต่งส่วนตารางงาน (Issue Board) */
+.issue-list-container {
+  background-color: var(--surface-color);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border: 1px solid #2a2a35;
+}
+
+.issue-form {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.issue-input {
+  flex: 1;
+  max-width: 450px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background-color: #121212;
+  color: white;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.issue-input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+.btn-submit {
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--accent-color);
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-submit:hover {
+  background-color: var(--accent-hover);
+}
+
+.btn-submit:active {
+  transform: scale(0.95);
+}
+
+/* ตกแต่งรายการ Issue แต่ละข้อ */
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.task-item {
+  background-color: #121212;
+  padding: 16px 20px;
+  border-radius: 8px;
+  border-left: 4px solid var(--accent-color);
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+
+.task-content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.task-title {
+  font-weight: 600;
+  font-size: 1.1em;
+  color: var(--text-main);
+}
+
+.task-meta {
+  font-size: 0.85em;
+  color: var(--text-muted);
+}
+
+.status-badge {
+  background-color: #2a2a35;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: #a164ff;
+}
+
+.loading-text {
+  color: var(--text-muted);
+  font-style: italic;
+}
