@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
+
   const [issues, setIssues] = useState([]);
   const [newTitle, setNewTitle] = useState('');
 
@@ -54,17 +55,16 @@ function App() {
       .catch(error => console.error('Error deleting issue:', error));
   };
 
-  // --- เพิ่มฟังก์ชันใหม่: อัปเดตสถานะเป็น Done ---
   const handleCompleteStatus = (issueId) => {
     fetch(`https://portfolio-api-backend-cvc2.onrender.com/api/projects/1/issues/${issueId}`, {
-      method: 'PUT', // ใช้ PUT สำหรับการอัปเดต
+      method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ status: 'Done' }) // ส่งสถานะใหม่ไปให้หลังบ้าน
+      body: JSON.stringify({ status: 'Done' })
     })
       .then(response => response.json())
       .then(data => {
         if (data.status === 'success') {
-          fetchIssues(); // โหลดรายการใหม่เพื่อให้หน้าจออัปเดตสถานะทันที
+          fetchIssues();
         }
       })
       .catch(error => console.error('Error updating issue:', error));
@@ -72,86 +72,153 @@ function App() {
 
   return (
     <div className="portfolio-container">
-      <header className="hero-section">
-        <img src="/getstudentimageftp.jpg" alt="My Profile" className="profile-img" width="150" height="150" />
-        <h1>Portfolio & Task Board</h1>
-      </header>
       
-      <main>
-        <h2>สถานะโปรเจคและงาน</h2>
-        <ul className="project-grid">
-          <li className="project-card">
-            <h4>🎨 ปั้นโมเดล Blender</h4>
-            <p>กำลังศึกษาและทำอยู่</p>
-          </li>
-          <li className="project-card">
-            <h4>🎮 โปรเจคเกี่ยวกับเกม</h4>
-            <p>พัฒนาด้วย Unity</p>
-          </li>
-          <li className="project-card">
-            <h4>💻 ระบบเว็บแอปพลิเคชัน</h4>
-            <p>React + Express API</p>
-          </li>
-        </ul>
-        
-        <div className="issue-list-container">
-          <h2>📋 รายการ Issue จาก Database</h2>
-          
-          <form onSubmit={handleSubmit} className="issue-form">
-            <input 
-              type="text" 
-              placeholder="เพิ่มงานใหม่ที่ต้องทำ..." 
-              value={newTitle}
-              onChange={(e) => setNewTitle(e.target.value)}
-              className="issue-input"
-            />
-            <button type="submit" className="btn-submit">เพิ่มงาน</button>
-          </form>
+      {/* ส่วนหัว: โปรไฟล์และชื่อ */}
+      <div className="profile-section">
+        <img 
+          src="/getstudentimageftp.jpg" 
+          alt="My Profile" 
+          className="profile-image" 
+        />
+        <h1 className="portfolio-title">
+          Hi, I'm Krittaphat Butsabakonkun
+        </h1>
+        <p className="portfolio-subtitle">
+          Welcome to my Portfolio
+        </p>
+      </div>
 
-          {issues.length === 0 ? (
-            <p className="loading-text">กำลังโหลดข้อมูล หรือยังไม่มี Issue...</p>
-          ) : (
-            <ul className="task-list">
-              {issues.map(issue => (
-                <li key={issue.id} className="task-item">
-                  <div className="task-content">
-                    {/* ขีดฆ่าข้อความถ่างานเสร็จแล้ว */}
-                    <span className="task-title" style={{ textDecoration: issue.status === 'Done' ? 'line-through' : 'none', color: issue.status === 'Done' ? '#888' : 'white' }}>
-                      {issue.title}
-                    </span>
-                    <span className="task-meta">
-                      สถานะ: <span className="status-badge" style={{ color: issue.status === 'Done' ? '#4caf50' : '#a164ff' }}>{issue.status}</span> | 
-                      ผู้รับผิดชอบ: {issue.assignee ? issue.assignee.username : 'ยังไม่มอบหมายงาน'}
-                    </span>
-                  </div>
-                  
-                  {/* จัดกลุ่มปุ่มให้อยู่ด้วยกัน */}
-                  <div style={{ marginLeft: 'auto', display: 'flex', gap: '8px' }}>
-                    
-                    {/* ปุ่ม เสร็จแล้ว (จะซ่อนเมื่อสถานะเป็น Done) */}
-                    {issue.status !== 'Done' && (
-                      <button 
-                        onClick={() => handleCompleteStatus(issue.id)} 
-                        style={{ backgroundColor: '#4caf50', padding: '6px 12px', border: 'none', borderRadius: '4px', color: 'white', cursor: 'pointer' }}
-                      >
-                        ✔ เสร็จแล้ว
-                      </button>
-                    )}
+      <h2 className="section-heading">สถานะโปรเจคและงาน</h2>
 
-                    {/* ปุ่ม ลบ */}
-                    <button 
-                      onClick={() => handleDelete(issue.id)} 
-                      style={{ backgroundColor: '#ff4b4b', padding: '6px 12px', border: 'none', borderRadius: '4px', color: 'white', cursor: 'pointer' }}
-                    >
-                      ลบ
-                    </button>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          )}
+      {/* รวมกลุ่ม Card ผลงานและระบบ Task ไว้ด้วยกัน */}
+      <div className="cards-container">
+
+        {/* Card 1: Unity Game (ย้ายขึ้นมาบนสุด) */}
+        <div className="card">
+          <div className="card-header">
+            <h3>🎮 โปรเจคเกี่ยวกับเกม</h3>
+            <span className="badge">พัฒนาด้วย Unity</span>
+          </div>
+          <p className="card-description">
+            พัฒนาเกมโดยใช้ Unity และ VS Code 2022 เน้นการเขียนโค้ด C# 
+            และให้ความสำคัญกับขั้นตอน Game Optimization เพื่อให้ตัวเกมมีประสิทธิภาพและพร้อมสำหรับการเผยแพร่
+          </p>
+          <a 
+            href="https://jopjop054.itch.io/papansuk" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="btn btn-unity"
+          >
+            🕹️ ดาวโหลดเกมได้ที่ itch.io
+          </a>
         </div>
-      </main>
+
+        {/* Card 2: Web App (ย้ายขึ้นมาเป็นอันดับสอง) */}
+        <div className="card">
+          <div className="card-header">
+            <h3>💻 ระบบเว็บแอปพลิเคชัน</h3>
+            <span className="badge">React + Express API</span>
+          </div>
+          <p className="card-description">
+            ระบบ Task Board แบบ Full-stack รองรับการจัดการข้อมูล (CRUD) 
+            (ปัจจุบันกำลังศึกษาและพัฒนาเพิ่มเติม)
+          </p>
+          
+          {/* จัดกลุ่มปุ่มให้อยู่คู่กัน */}
+          <div style={{ display: 'flex', gap: '10px' }}>
+            <a 
+              href="https://github.com/krittaphat054-lgtm/my-portfolio" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="btn btn-web"
+              style={{ flex: 1 }}
+            >
+              🖥️ Frontend Code
+            </a>
+            <a 
+              href="https://github.com/krittaphat054-lgtm/portfolio-api" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="btn btn-web"
+              style={{ flex: 1, backgroundColor: '#2a2a35', border: '1px solid #4a52ff' }}
+            >
+              ⚙️ Backend Code
+            </a>
+          </div>
+        </div>
+
+        {/* Card 3: Blender (ย้ายลงมาอันดับสาม และนำปุ่มออก) */}
+        <div className="card">
+          <div className="card-header">
+            <h3>🎨 ปั้นโมเดล Blender</h3>
+            <span className="badge">กำลังศึกษาและทำอยู่</span>
+          </div>
+          <p className="card-description">
+            ปัจจุบันกำลังศึกษาและฝึกฝนการใช้งานโปรแกรม
+          </p>
+        </div>
+
+        {/* Card 4: ระบบ Task Board จาก Database */}
+        <div className="card">
+          <div className="card-header">
+            <h3>📋 รายการ Issue จาก Database</h3>
+          </div>
+          
+          <div className="issue-list-container" style={{ marginTop: '15px' }}>
+            <form onSubmit={handleSubmit} className="issue-form" style={{ display: 'flex', gap: '10px', marginBottom: '20px' }}>
+              <input 
+                type="text" 
+                placeholder="เพิ่มงานใหม่ที่ต้องทำ..." 
+                value={newTitle}
+                onChange={(e) => setNewTitle(e.target.value)}
+                className="issue-input"
+                style={{ flex: 1, padding: '10px', borderRadius: '6px', border: '1px solid #444', backgroundColor: '#2c2c35', color: 'white' }}
+              />
+              <button type="submit" className="btn-submit" style={{ padding: '10px 15px', backgroundColor: '#a87ffb', border: 'none', borderRadius: '6px', color: 'white', cursor: 'pointer', fontWeight: 'bold' }}>
+                เพิ่มงาน
+              </button>
+            </form>
+
+            {issues.length === 0 ? (
+              <p className="loading-text" style={{ color: '#888' }}>กำลังโหลดข้อมูล หรือยังไม่มี Issue...</p>
+            ) : (
+              <ul className="task-list" style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                {issues.map(issue => (
+                  <li key={issue.id} className="task-item" style={{ backgroundColor: '#2a2a35', padding: '15px', borderRadius: '8px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <div className="task-content" style={{ display: 'flex', flexDirection: 'column', gap: '5px' }}>
+                      <span className="task-title" style={{ textDecoration: issue.status === 'Done' ? 'line-through' : 'none', color: issue.status === 'Done' ? '#888' : 'white', fontSize: '16px' }}>
+                        {issue.title}
+                      </span>
+                      <span className="task-meta" style={{ fontSize: '12px', color: '#b3b3b3' }}>
+                        สถานะ: <span className="status-badge" style={{ color: issue.status === 'Done' ? '#4caf50' : '#a87ffb', fontWeight: 'bold' }}>{issue.status}</span> | 
+                        ผู้รับผิดชอบ: {issue.assignee ? issue.assignee.username : 'ยังไม่มอบหมายงาน'}
+                      </span>
+                    </div>
+                    
+                    <div style={{ marginLeft: '10px', display: 'flex', gap: '8px' }}>
+                      {issue.status !== 'Done' && (
+                        <button 
+                          onClick={() => handleCompleteStatus(issue.id)} 
+                          style={{ backgroundColor: '#4caf50', padding: '6px 10px', border: 'none', borderRadius: '4px', color: 'white', cursor: 'pointer', fontSize: '12px' }}
+                        >
+                          ✔ เสร็จแล้ว
+                        </button>
+                      )}
+                      <button 
+                        onClick={() => handleDelete(issue.id)} 
+                        style={{ backgroundColor: '#ff4b4b', padding: '6px 10px', border: 'none', borderRadius: '4px', color: 'white', cursor: 'pointer', fontSize: '12px' }}
+                      >
+                        ลบ
+                      </button>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        </div>
+
+      </div>
     </div>
   );
 }

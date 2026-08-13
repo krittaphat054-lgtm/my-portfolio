@@ -1,16 +1,32 @@
-# React + Vite
+# Personal Portfolio & Task Board (Frontend)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
+![Netlify](https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7)
 
-Currently, two official plugins are available:
+A personal portfolio website combined with a fully functional Task Board application. This project showcases frontend development skills, UI design, and RESTful API integration.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+🔗 **Live Demo:** [https://bespoke-kitsune-57848c.netlify.app/](https://bespoke-kitsune-57848c.netlify.app/)
 
-## React Compiler
+## ✨ Features
+- **Portfolio Showcase:** Displays current projects, including 3D modeling (Blender), Game Development (Unity/C#), and Web Applications.
+- **Task Management (CRUD):** 
+  - Fetch and display tasks from the database in real-time.
+  - Add new tasks to the board.
+  - Update task status (e.g., mark as "Done").
+  - Delete tasks from the system.
+- **Responsive UI:** Built with React and styled with clean, modern CSS.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tech Stack
+- **Framework:** React (Bootstrapped with Vite)
+- **Styling:** CSS
+- **Deployment:** Netlify
+- **Backend Integration:** Connects to a custom Express.js API ([portfolio-api](https://github.com/krittaphat054-lgtm/portfolio-api)).
 
-## Expanding the ESLint configuration
+## 🚀 Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+To run this project locally, follow these steps:
+
+1. Clone the repository:
+   ```bash
+   git clone [https://github.com/krittaphat054-lgtm/my-portfolio.git](https://github.com/krittaphat054-lgtm/my-portfolio.git)
